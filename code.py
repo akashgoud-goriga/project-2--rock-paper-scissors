@@ -5,10 +5,13 @@ print("welcome to rock paper scissor game")
 while True:
     cump = random.choice(options)
     print("type 'q' or 'Q' to exit the game")
-
-
     hum = input("enter rock or paper or scissor :-  ")
-    
+    try:
+        if float(hum):
+            print("error : enter only rock or paper or scissor")
+            break
+    except ValueError:
+        pass
     if hum == cump:
         print(f"computer's choice {cump} , your choice {hum}")
         print("nobody won")
